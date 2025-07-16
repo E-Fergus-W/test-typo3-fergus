@@ -1,0 +1,42 @@
+# DDEV specific files
+.ddev/db/
+.ddev/.webimages/
+.ddev/ssh_auth/
+.ddev/.bkp/
+.ddev/config.yaml.example
+.ddev/commands/web/*.example
+.ddev/commands/host/*.example
+.ddev/docker-compose.yaml.example
+
+# Composer dependencies
+/vendor/
+# Keep composer.lock on production environments but ignore locally for easier development across teams
+# composer.lock (atm ignored for local development)
+
+# TYPO3 temporary and user-generated files
+/public/typo3temp/
+/public/fileadmin/
+# For generated assets like compiled CSS/JS if not versioned manually
+/public/_assets/ 
+# Old TYPO3 upload directory if used
+/public/uploads/ 
+
+# TYPO3 local configuration and state
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/PackageStates.php
+# Exclude extensions installed via composer (they live in vendor)
+/public/typo3conf/ext/ 
+# If you have custom local extensions in typo3conf/ext/, you might need to adjust this line carefully.
+# For now, it's safer to assume all extensions come via Composer.
+
+# General system and IDE files
+.DS_Store
+.idea/
+.vscode/
+nbproject/
+*.iml
+Thumbs.db
+.env
+auth.json
+*.log
+log/
